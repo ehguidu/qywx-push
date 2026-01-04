@@ -106,12 +106,11 @@ class WeChatService {
     }
 
     // 获取部门成员
-    async getUserList(accessToken, departmentId = 1) {
+    async getUserList(accessToken) {
         try {
-            const response = await axios.get(`${this.apiBase}/cgi-bin/user/list`, {
+            const response = await axios.get(`${this.apiBase}/cgi-bin/user/list_id`, {
                 params: {
-                    access_token: accessToken,
-                    department_id: departmentId
+                    access_token: accessToken
                 }
             });
 
