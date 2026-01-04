@@ -4,7 +4,7 @@
 const axios = require('axios');
 
 class WeChatService {
-    constructor(apiBase = 'https://qyapi.weixin.qq.com') {
+    constructor(apiBase = apiBase = process.env.WECHAT_API_BASE || 'https://qyapi.weixin.qq.com') {
         this.apiBase = apiBase;
         this.tokenCache = new Map(); // 缓存access_token
     }
