@@ -1,4 +1,4 @@
-FROM node:18
+FROM docker.1ms.run/node:18
 
 WORKDIR /app
 
