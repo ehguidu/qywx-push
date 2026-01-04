@@ -135,14 +135,13 @@ class WeChatService {
             const userSet = new Set(); // 用于去重
 
             for (const dept of departments) {
-                const users = await this.getUserList(accessToken, dept.id);
+                const users = await this.getUserList(accessToken);
                 users.forEach(user => {
-                    if (!userSet.has(user.userid)) {
-                        userSet.add(user.userid);
+                    if (!userSet.has(user.open_userid)) {
+                        userSet.add(user.open_userid);
                         allUsers.push({
-                            userid: user.userid,
-                            name: user.name,
-                            department: dept.name
+                            open_userid: user.open_userid,
+                            name: user.open_userid
                         });
                     }
                 });
